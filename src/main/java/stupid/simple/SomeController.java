@@ -12,12 +12,16 @@ import java.util.concurrent.atomic.AtomicLong;
 @RestController
 public class SomeController {
 
-    @Autowired
     private AtomicLong counter;
     private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+    @Autowired
+    public SomeController(AtomicLong counter){
+        this.counter = counter;
+    }
+
     @GetMapping("/hello")
-    public SimpleResponse helloHandler(@RequestParam(value = "name", defaultValue = "World") String name) {
+    public SimpleResponse helloHandler(@RequestParam(value = "name", defaultValue = "UserName") String name) {
         return new SimpleResponse(counter.incrementAndGet(), name, simpleDateFormat.format(new Timestamp(System.currentTimeMillis())));
     }
 }

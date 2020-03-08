@@ -1,6 +1,5 @@
 package stupid.simple
 
-
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.context.ApplicationContext
@@ -30,12 +29,12 @@ class AppSpec extends Specification {
         println('will be executed after the first feature method')
     }
 
-    def "ApplicationContext is not null"() {
+    def 'ApplicationContext is not null'() {
         expect:
         applicationContext != null
     }
 
-    def "AtomicCounter is not null"() {
+    def 'AtomicCounter is not null'() {
         expect:
         applicationContext.containsBeanDefinition('atomicLong')
     }
