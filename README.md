@@ -1,5 +1,5 @@
 # What is it?
-Simple Spock setup to test rest api
+Simple Spock setup to test rest api  
 Spring Boot, Java 8 and Maven are used for this demo
 
 # How to run?
@@ -12,4 +12,5 @@ Maven test execution can be started as
 [Spock Framework official web page](http://spockframework.org/)  
 [David Parry demo with Gradle](https://github.com/davidparry/groovy-spock)  
 [chrismacp example with Java 11 and Maven](https://github.com/chrismacp/example-springboot-spock)  
-[Spring Boot rest api example](https://spring.io/guides/gs/rest-service/)
+[Spring Boot rest api example](https://spring.io/guides/gs/rest-service/)  
+[Stubbing and Mocking article](https://semaphoreci.com/community/tutorials/stubbing-and-mocking-in-java-with-the-spock-testing-framework)
