@@ -23,9 +23,20 @@ class SomeControllerSpec extends Specification {
         def someController = new SomeController(counterMock)
 
         when:
-        def response = someController.helloHandler(someName).getContent()
+        def response = someController.helloHandler(someName)
+        def responseContent = response.getContent()
+        def responseId = response.getId()
 
         then:
-        response == someName
+        responseContent == someName
+        // responseId incremented with counter.incrementAndGet() and similar thing should be stubbed,
+        // but there is no support for stubbing final methods:
+        // http://spock-framework.3207229.n2.nabble.com/Mocking-classes-with-final-mehtods-td7573116.html
+        // otherwise something like this can be done counterMock.incrementAndGet() >> 999
+        // or
+        // def counterMock = Mock(AtomicLong){
+        //    incrementAndGet() >> 999
+        // }
+        responseId > 0
     }
 }
